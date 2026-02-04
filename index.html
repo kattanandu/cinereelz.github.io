@@ -2,117 +2,205 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>CineReelz</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <style>
+    * {
+      box-sizing: border-box;
+    }
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
+      font-family: Arial, Helvetica, sans-serif;
       background: #000;
       color: #fff;
     }
+
     header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 15px 30px;
       position: sticky;
       top: 0;
       background: #000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 30px;
+      z-index: 1000;
+      border-bottom: 1px solid #111;
     }
-    .logo img {
-      height: 40px;
+
+    header img {
+      height: 42px;
     }
+
     .btn {
       background: #e50914;
       color: #fff;
+      text-decoration: none;
       padding: 10px 18px;
       border-radius: 6px;
-      text-decoration: none;
       font-weight: bold;
+      transition: 0.3s;
     }
+
+    .btn:hover {
+      opacity: 0.85;
+    }
+
     .hero {
-      padding: 80px 30px;
+      padding: 90px 20px;
       text-align: center;
     }
+
     .hero h1 {
       font-size: 3rem;
       color: #e50914;
+      margin-bottom: 10px;
     }
-    .section {
-      padding: 60px 30px;
+
+    .hero p {
+      font-size: 1.1rem;
+      opacity: 0.9;
+    }
+
+    section {
+      padding: 70px 20px;
       text-align: center;
     }
+
+    h2 {
+      margin-bottom: 30px;
+      font-size: 2rem;
+      color: #e50914;
+    }
+
     .reels {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
-      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+      max-width: 1000px;
+      margin: auto;
     }
+
+    .reel-card {
+      position: relative;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 0 25px rgba(229, 9, 20, 0.6);
+      transition: transform 0.3s;
+    }
+
+    .reel-card:hover {
+      transform: scale(1.05);
+    }
+
+    .reel-card img {
+      width: 100%;
+      display: block;
+    }
+
+    .play {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 3rem;
+      color: #fff;
+      background: rgba(0,0,0,0.5);
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
     footer {
       padding: 30px;
       text-align: center;
       font-size: 14px;
       color: #aaa;
+      border-top: 1px solid #111;
+    }
+
+    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: 2.3rem;
+      }
     }
   </style>
 </head>
+
 <body>
 
 <header>
-  <div class="logo">
-    <img src="logo.png" alt="CineReelz Logo">
-  </div>
-  <a class="btn" href="https://wa.me/91XXXXXXXXXX?text=Hey%20CineReelz%20🎬%20I%20want%20to%20book%20an%20instant%20reel.">
+  <img src="logo.png" alt="CineReelz Logo">
+
+  <a class="btn"
+     href="https://wa.me/918125035906?text=Hey%20CineReelz%20🎬%20I%20want%20to%20book%20an%20instant%20reel."
+     target="_blank">
     Book on WhatsApp
   </a>
 </header>
 
-<section class="hero">
+<div class="hero">
   <h1>CINEREELZ</h1>
   <p><strong>Instant Reels. Real Moments.</strong></p>
   <p>Shot on iPhone • Delivered in 10 Minutes</p>
-</section>
+</div>
 
-<section class="section">
+<section>
   <h2>About CineReelz</h2>
   <p>
-    CineReelz creates cinematic reels using only an iPhone and delivers them
-    within 10 minutes. Perfect for creators, events, and brands.
+    CineReelz captures cinematic reels using only an iPhone and delivers them
+    within just 10 minutes. Fast, clean, and made for social media.
   </p>
 </section>
 
-<section class="section">
+<section>
   <h2>Our Reels</h2>
+
   <div class="reels">
-    
+
     <!-- Reel 1 -->
-    <blockquote class="instagram-media"
-      data-instgrm-permalink="https://www.instagram.com/reel/DUHsX3yEt-K/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
-      data-instgrm-version="14">
-    </blockquote>
+    <a class="reel-card"
+       href="https://www.instagram.com/reel/DUHsX3yEt-K/"
+       target="_blank">
+      <img src="reel1.jpg" alt="Reel 1">
+      <div class="play">▶</div>
+    </a>
 
     <!-- Reel 2 -->
-    <blockquote class="instagram-media"
-      data-instgrm-permalink="https://www.instagram.com/reel/DTu-y5hkkKs/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
-      data-instgrm-version="14">
-    </blockquote>
+    <a class="reel-card"
+       href="https://www.instagram.com/reel/DTg8QB3Ekcy/"
+       target="_blank">
+      <img src="reel2.jpg" alt="Reel 2">
+      <div class="play">▶</div>
+    </a>
+
+    <!-- Reel 3 -->
+    <a class="reel-card"
+       href="https://www.instagram.com/reel/DTu-y5hkkKs/"
+       target="_blank">
+      <img src="reel3.jpg" alt="Reel 3">
+      <div class="play">▶</div>
+    </a>
 
   </div>
 </section>
 
-<script async src="https://www.instagram.com/embed.js"></script>
-
-
-<section class="section">
+<section>
   <h2>Book a Reel</h2>
-  <p>Want a cinematic reel instantly?</p>
-  <a class="btn" href="https://wa.me/91XXXXXXXXXX?text=Hey%20CineReelz%20🎬%20I%20want%20to%20book%20an%20instant%20reel.">
+  <p>Want a cinematic reel delivered instantly?</p>
+  <br>
+  <a class="btn"
+     href="https://wa.me/918125035906?text=Hey%20CineReelz%20🎬%20I%20want%20to%20book%20an%20instant%20reel."
+     target="_blank">
     Book on WhatsApp
   </a>
 </section>
 
 <footer>
-  © CineReelz • Shot on iPhone
+  © CineReelz • Shot on iPhone • Instant Reels
 </footer>
 
 </body>
